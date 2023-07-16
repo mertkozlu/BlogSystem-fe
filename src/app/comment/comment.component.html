@@ -1,0 +1,35 @@
+<div class="add-comment-container">
+<table>
+    <thead>
+        <tr>
+            <th>Comment ID</th>
+            <th>User ID</th>
+            <th>Post ID</th>
+            <th>Comments</th>
+            <th>Confirmed</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let comment of commentList">
+            <td>{{ comment.commentId}}</td>
+            <td>{{ comment.userId }}</td>
+            <td>{{ comment.postId }}</td>
+            <td>{{ comment.comment }}</td>
+            <td>{{ comment.isConfirmed }}</td>
+            <td><a class="update-link" [routerLink]="['/update-comment', comment.commentId]">Update</a></td>
+            <td><button class="delete-button" (click)="deleteItem(comment.commentId)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="add-comment-button-container">
+<a class="add-comment-button" routerLink="/add-comment" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Add Comment
+</a>
+
+
+
+  
